@@ -1,0 +1,29 @@
+var products = /** @class */ (function () {
+    function products(id, name, price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+    // get proId(): number {
+    //     return this.id;
+    // }
+    // get proName(): string {
+    //     return this.name;
+    // }
+    // get proPrice(): number {
+    //     return this.price;
+    // }
+    products.prototype.greet = function () {
+        console.log(" ".concat(this.name, ",is ").concat(this.price, " rupees."));
+    };
+    return products;
+}());
+var chips = new products(1, "Chips", 50);
+var soda = new products(2, "Soda", 70);
+console.log(products);
+// console.log(chips.proPrice);
+// console.log(soda.proPrice);
+console.log(chips.price);
+console.log(soda.price);
+chips.greet();
+soda.greet();
