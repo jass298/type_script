@@ -1,0 +1,20 @@
+//4
+
+let years3: Array<number> = [ 2016, 2017, 2018, 2019]; 
+for (let i=0;i<=years3.length; i++) {
+     console.log(years3[i]);
+}
+
+
+//5
+let years4: Array<any> = [ '2016', true, 2018, 2019]; 
+for (let  i of years4) {
+     console.log(i)
+}
+
+//6
+let years5: Array<string> = [ "jan", 'feb', 'march', 'april']; 
+years5.forEach(function(yrs, i) {
+  console.log(yrs);
+});
+
