@@ -1,0 +1,62 @@
+class Fruits {
+
+    id: number ;
+    name: string;
+    price: number;
+
+    constructor(  id: number,  name: string,  price: number) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+  
+get proId(): number {
+    return this.id;
+}
+
+get proName(): string {
+    return this.name;
+}
+
+get proPrice(): number {
+    return this.price;
+}
+
+set proPrice(value : number) {
+
+          if (value > this.price) {
+            this.price = value;
+            console.log(`Updated price: ${this.price}`);
+        }
+}
+
+  greet(): void {
+    console.log(` ${this.id},${this.name},is ${this.price} rupees.`);
+  }
+}
+
+const apple = new Fruits(1, "apple", 30);
+const mango = new Fruits(2, "mango", 40);
+const orange = new Fruits(3, "orange", 50);
+const banana = new Fruits(4, "banana", 25);
+const cherry = new Fruits(5, "cherry", 60);
+
+
+console.log(apple.proPrice);
+console.log(mango.proPrice);
+console.log(orange.proPrice);
+console.log(banana.proPrice);
+console.log(cherry.proPrice);
+
+// Add fruits to an array
+const fruitsArray: Fruits[] = [apple, mango, orange, banana, cherry];
+
+// Find the fruit with the max price
+const maxFruit = fruitsArray.reduce((prev, current) => {
+    return current.proPrice > prev.proPrice ? current : prev;
+});
+
+console.log(`\n🍒 The fruit with the highest price is: ${maxFruit.proName} at ₹${maxFruit.proPrice}\n`);
+
+
+fruitsArray.forEach(fruit => fruit.greet());
