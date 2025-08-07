@@ -1,0 +1,46 @@
+interface Detail {
+    name: string,
+    address: string,
+    city: string,
+    // city?: string, if we put ? then we can take it optiuonal .
+}
+
+class Employee implements Detail {
+
+    name: string
+    address: string
+    city: string
+
+    constructor(name: string, address: string, city: string) {
+        this.name = name;
+        this.address = address;
+        this.city = city;
+    }
+
+    getDetail() {
+        return this.name,
+            this.address,
+            this.city;
+
+    }
+    setDetail() {
+        return console.log(`${this.name} lives in ${this.address} of ${this.city}.`);
+    }
+
+    info(): void {
+        console.log(`${this.name} lives in ${this.address} of ${this.city}.`);
+    }
+
+}
+
+const sam = new Employee('sam', 'grandfut street', "Punjab");
+const rammu = new Employee('rammu', 'lahore street', "pakistan");
+const amammu = new Employee('amammu', 'kajeri', "gujrat");
+const khus = new Employee('khus', ' kyc ', "london");
+const ankita = new Employee('ankita', 'bellebille', "canada");
+
+sam.setDetail();
+khus.setDetail();
+
+const personArray: Employee[] = [sam, rammu, amammu, khus, ankita];
+personArray.forEach(person => person.info());
