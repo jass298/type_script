@@ -1,0 +1,63 @@
+
+
+class Student {
+
+    rollNo: number;
+    studentName: string;
+
+    constructor(rollNo: number, studentName: string) {
+        this.rollNo = rollNo;
+        this.studentName = studentName;
+    }
+    infoStudent(): void {
+        console.log(`${this.studentName} has roll number ${this.rollNo} .`)
+    }
+
+}
+
+class Course extends Student {
+    id: number;
+    name: string;
+    fee: number;
+
+    constructor(rollNo: number, studentName: string, id: number, name: string, fee: number) {
+        super(rollNo, studentName);
+
+        this.id = id;
+        this.name = name;
+        this.fee = fee;
+
+    }
+
+    infocousre(): void {
+        console.log(`${this.studentName} has roll number ${this.rollNo},
+         id ${this.id} and enrolled in course name : ${this.name} by paying ${this.fee}.`)
+    }
+}
+
+class Institute extends Course {
+    iname: string;
+    address: string;
+
+    constructor(rollNo: number, studentName: string, id: number, name: string, fee: number, iname: string, address: string) {
+        super(rollNo, studentName, id, name, fee)
+
+        this.iname = iname;
+        this.address = address;
+
+    }
+    fulldetail(): void {
+        console.log(`${this.studentName} has roll number ${this.rollNo},
+         id ${this.id} and enrolled in course name : ${this.name} by paying ${this.fee}.`
+            + `Institute name is ${this.iname} and address is ${this.address}.`);
+    }
+}
+
+
+const rahul = new Course(101, "rahul", 1, 'typescript', 5000);
+const seema = new Student(102, 'seema');
+const sidhu = new Institute(103, "sidhu", 2, 'javascript', 6000, 'ABC Institute', '123 Main St');
+
+seema.infoStudent();
+rahul.infocousre();
+sidhu.fulldetail();
